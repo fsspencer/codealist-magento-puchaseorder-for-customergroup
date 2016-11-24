@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Codealist_PurchaseOrderForCustomerGroup>
+            <version>0.1.0</version>
+        </Codealist_PurchaseOrderForCustomerGroup>
+    </modules>
+    <global>
+        <models>
+            <codealist_purchaseorderforcustomergroup>
+                <class>Codealist_PurchaseOrderForCustomerGroup_Model</class>
+                <resourceModel>codealist_purchaseorderforcustomergroup_resource</resourceModel>
+            </codealist_purchaseorderforcustomergroup>
+            <codealist_purchaseorderforcustomergroup_resource>
+                <class>Codealist_PurchaseOrderForCustomerGroup_Model_Resource</class>
+            </codealist_purchaseorderforcustomergroup_resource>
+        </models>
+        <resources>
+            <codealist_purchaseorderforcustomergroup_setup>
+                <setup>
+                    <module>Codealist_PurchaseOrderForCustomerGroup</module>
+                </setup>
+            </codealist_purchaseorderforcustomergroup_setup>
+        </resources>
+        <events>
+            <payment_method_is_active>
+                <observers>
+                    <codealist_purchaseorderforcustomergroup>
+                        <class>codealist_purchaseorderforcustomergroup/observer</class>
+                        <method>paymentMethodIsActive</method>
+                    </codealist_purchaseorderforcustomergroup>
+                </observers>
+            </payment_method_is_active>
+        </events>
+    </global>
+</config>
